@@ -1,0 +1,28 @@
+<div >
+    <button class="botaodenovo" ng-click="irParaTelaDeCadastro()">Novo Cadastro</button>
+    <hr>
+    <div id="listaDePessoas" >
+        <h1>Lista de pessoas cadastradas</h1>
+
+        <table class="tabela">
+            <tr >
+                <th class="colunadatabela">NOME</th>
+                <th class="colunadatabela">E-MAIL</th>
+                <th class="colunadatabela">TELEFONE</th>
+                <th class="colunadatabela">CPF</th>
+
+
+            </tr>
+            <tr ng-repeat="Pessoa in listadepessoas | orderBy:'nome'">
+                <td class="colunadatabela">{{Pessoa.nome}}</td>
+                <td class="colunadatabela">{{Pessoa.email}}</td>
+                <td class="colunadatabela">{{Pessoa.telefone}}</td>
+                <td class="colunadatabela">{{Pessoa.cpf}}</td>
+
+                <td><button class="botaoEditar" ng-click="irParaTelaDeEditarPessoa(Pessoa)">Editar</button></td>
+                <td><button class="botaoExcluir" ng-click="excluirPessoa(Pessoa)">Excluir</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+

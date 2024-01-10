@@ -1,0 +1,73 @@
+#cadastro {
+    background-color: #e9e9ec;
+    margin-left: 30%;
+    margin-right: 35%;
+    margin-top: 3%;
+    text-align: center;
+    border: solid 1px black;
+}
+
+#TituloDaTelaDeCadastro {
+    margin-top: 0px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #00afff;
+}
+
+.form-cadastro{
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 36%;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.input-cadastro{
+    height: 25px;
+    width: 199px;
+    display: inline-block;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+#botoesDeSalvarECancelar{
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
+
+#botaoDeSalvarContato{
+    font-family: "Helvetica, sans-serif";
+    width: 80px;
+    height: 30px;
+    background-color: #00afff;
+    border: solid 2px white;
+    border-radius: 5px;
+    margin-right: 3%;
+    margin-left: 7%;
+}
+
+#botaoDeSalvarContato:hover{
+    scale: 105%;
+}
+
+#botaoDeCancelarContato{
+    font-family: "Helvetica, sans-serif";
+    width: 75px;
+    height: 30px;
+    background-color: #f60e4d;
+    border: solid 2px white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10%;
+}
+
+#botaoDeCancelarContato:hover{
+    scale: 105%;
+}
+
+
+

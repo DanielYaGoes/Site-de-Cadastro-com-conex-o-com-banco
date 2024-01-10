@@ -1,0 +1,79 @@
+
+<div id="edicaoPessoa">
+    <h2 id="TituloDaTelaDeCadastro">Tela de Edição</h2>
+    <form name="EditarPessoa">
+        <div >
+            <label class="form-cadastro-edicao" for="nomeesobrenome">Nome e sobrenome
+                <input class="input-cadastro-edicao" id="nomeesobrenome" type="text" required
+                       placeholder="Digite seu nome e sobrenome" ng-model="nomeEdicao" name="nome"/>
+            </label>
+            <p ng-if="!EditarPessoa.nome.$valid" class="preencherCampos">Favor, preencher o campo nome<p>
+            <label class="form-cadastro-edicao" for="cpf">Digite seu CPF
+                <input class="input-cadastro" type="text" required placeholder="00000000000" id="cpf" ng-model="cpfEdicao" name="cpf"/>
+            </label>
+            <p ng-show="EditarPessoa.cpf.$error.pattern || !validarCPF(cpfEdicao)" class="preencherCampos">Favor, preencher um CPF válido, formato (XXX.XXX.XXX-XX)</p>
+            <p ng-if="!EditarPessoa.cpf.$valid" class="preencherCampos">Favor, preencher o campo cpf<p>
+            <label class="form-cadastro-edicao" for="emaildocadastro">Digite seu e-mail
+                <input class="input-cadastro" type="text" required placeholder="seuemail@email.com" id="emaildocadastro" ng-model="emailEdicao" ng-required="true" name="email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
+                <p ng-if="EditarPessoa.email.$error.pattern" class="preencherCampos">Favor, preencher um e-mail válido</p>
+                <p ng-if="EditarPessoa.email.$error.required" class="preencherCampos">Favor, preencher o campo e-mail<p>
+            <label class="form-cadastro-edicao" for="telefone">Digite seu telefone
+                <input class="input-cadastro-edicao" type="text" required placeholder="DD DDDDD-DDDD" id="telefone" ng-model="telefoneEdicao" name="telefone" ng-pattern="/^\d{2}\s\d{5}\s\d{4}$/"/>
+            </label>
+            <p ng-if="EditarPessoa.telefone.$error.pattern" class="preencherCampos">Favor, preencher um numero de telefone válido, formato(DD DDDDD-DDDD)</p>
+            <p ng-if="EditarPessoa.telefone.$error.required" class="preencherCampos">Favor, preencher o campo telefone<p>
+        </div>
+        <div class="endereço">
+
+            <h2 id="TituloEndereco">Endereço</h2>
+            <label class="form-endereço-edicao" for="cidade">
+                Cidade
+                <input class="input-endereço-edicao" id="cidade" type="text" required
+                       placeholder="Digite o nome da sua Cidade" ng-model="cidadeEdicao" name="cidade">
+            </label>
+            <p ng-if="!EditarPessoa.cidade.$valid" class="preencherCampos">Favor, preencher o campo cidade<p>
+            <label class="form-endereço-edicao" for="rua">
+                Rua
+                <input class="input-endereço-edicao" id="rua" type="text" required placeholder="Digite o nome da sua rua" ng-model="ruaEdicao" name="rua">
+            </label>
+            <p ng-if="!EditarPessoa.rua.$valid" class="preencherCampos">Favor, preencher o campo rua<p>
+            <label class="form-endereço-edicao" for="quadra">
+                Quadra
+                <input class="input-endereço-edicao" id="quadra" type="number" required placeholder="Digite a sua quadra" ng-model="quadraEdicao" name="quadra">
+            </label>
+            <p ng-if="!EditarPessoa.quadra.$valid" class="preencherCampos">Favor, preencher o campo quadra<p>
+            <label class="form-endereço-edicao" for="lote">
+                Lote
+                <input class="input-endereço-edicao" id="lote" type="number" required placeholder="Digite a seu Lote" ng-model="loteEdicao" name="lote">
+            </label>
+            <p ng-if="!EditarPessoa.lote.$valid" class="preencherCampos">Favor, preencher o campo lote<p>
+        </div>
+    </form>
+    <div id="botoesDeSalvarECancelar">
+        <button id="botaoDeSalvar" ng-click="salvarPessoa(nomeEdicao,cpfEdicao,emailEdicao,telefoneEdicao,cidadeEdicao,ruaEdicao,quadraEdicao,loteEdicao)" ng-disabled="EditarPessoa.$invalid">Salvar</button>
+        <button id="botaoDeCancelar" ng-click="irParaTabela()">Voltar</button>
+        <button id="botaoDeAdicionarContato" ng-click="irParaTelaDeCriarContato()">Adicionar Contato</button>
+    </div>
+    <hr>
+
+</div>
+<div id="listaDeContatos" ng-if="listadecontatos.length > 0">
+    <h1>Lista de Contatos</h1>
+
+    <table class="tabela">
+        <tr >
+            <th class="colunadatabela">NOME</th>
+            <th class="colunadatabela">E-MAIL</th>
+            <th class="colunadatabela">TELEFONE</th>
+
+
+        </tr>
+        <tr ng-repeat="contato in listadecontatos | orderBy:'nome'">
+            <td class="colunadatabela" >{{contato.nome}}</td>
+            <td class="colunadatabela">{{contato.email}}</td>
+            <td class="colunadatabela">{{contato.telefone}}</td>
+            <td><button class="botaoEditar" ng-click="irParaTelaDeEditarContato(contato)"><a>Editar</a></button></td>
+            <td><button class="botaoExcluir" ng-click="excluirContato(contato)">Excluir</button></td>
+        </tr>
+    </table>
+</div>

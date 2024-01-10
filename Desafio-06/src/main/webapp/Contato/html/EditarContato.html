@@ -1,0 +1,26 @@
+<div id="cadastro">
+    <h2 id="TituloDaTelaDeCadastro">TELA DE EDICAO DE CONTATO</h2>
+    <form name="EditarContato">
+        <div >
+            <label class="form-cadastro" for="nomeesobrenome">Nome e sobrenome
+                <input class="input-cadastro" id="nomeesobrenome" type="text" required
+                       placeholder="Digite seu nome e sobrenome" ng-model="nomeEdicao" name="nome">
+            </label>
+            <p ng-if="!EditarContato.nome.$valid" class="preencherCampos">Favor, preencher o campo nome<p>
+            <label class="form-cadastro" for="emaildocadastro">Digite seu e-mail
+                <input class="input-cadastro" type="text" required placeholder="seuemail@email.com" id="emaildocadastro" ng-model="emailEdicao" ng-required="true" name="email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
+                <p ng-if="EditarContato.email.$error.pattern" class="preencherCampos">Favor, preencher um e-mail válido</p>
+                <p ng-if="EditarContato.email.$error.required" class="preencherCampos">Favor, preencher o campo e-mail<p>
+            <label class="form-cadastro" for="telefone">Digite seu telefone
+                <input class="input-cadastro" type="text" required placeholder="DD DDDDD-DDDD" id="telefone" ng-model="telefoneEdicao" name="telefone" ng-pattern="/^\d{2}\s\d{5}\s\d{4}$/"/>
+            </label>
+            <p ng-if="EditarContato.telefone.$error.pattern" class="preencherCampos">Favor, preencher um numero de telefone válido, formato(DD DDDDD-DDDD)</p>
+            <p ng-if="EditarContato.telefone.$error.required" class="preencherCampos">Favor, preencher o campo telefone<p>
+        </div>
+    </form>
+    <div id="botoesDeSalvarECancelar">
+        <button id="botaoDeSalvar" ng-click="editarContato(nomeEdicao,emailEdicao,telefoneEdicao)" ng-disabled="EditarContato.$invalid">Salvar</button>
+        <button id="botaoDeCancelar" ng-click="voltarParaTelaDeEditarPessoa()">Voltar</button>
+    </div>
+</div>
+

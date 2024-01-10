@@ -1,0 +1,69 @@
+<body>
+
+    <div id="cadastroPessoa">
+        <h2 id="TituloDaTelaDeCadastro">TELA DE CADASTRO</h2>
+        <form name="CadastroPessoa">
+            <div >
+                <label class="form-cadastro" for="nomeesobrenome">Nome e sobrenome
+                    <input class="input-cadastro" id="nomeesobrenome" type="text" required
+                           placeholder="Digite seu nome e sobrenome" ng-model="nome" ng-required="true" name="nome"/>
+                </label>
+                <p ng-if="!CadastroPessoa.nome.$valid" class="preencherCampos">Favor, preencher o campo nome<p>
+                <label class="form-cadastro" for="cpf">Digite seu CPF
+                    <input class="input-cadastro" type="text" required placeholder="00000000000" id="cpf" ng-model="cpf" ng-required="true" name="cpf" ng-pattern="/^\d{3}\.\d{3}\.\d{3}-\d{2}$/" ng-change="validarCPF(cpf)" required>
+                    <p ng-show="CadastroPessoa.cpf.$error.pattern || !validarCPF(cpf)" class="preencherCampos">Favor, preencher um CPF válido, formato (XXX.XXX.XXX-XX)</p>
+                    <p ng-if="!CadastroPessoa.cpf.$valid" class="preencherCampos">Favor, preencher o campo cpf<p>
+                </label>
+                <label class="form-cadastro" for="emaildocadastro">Digite seu e-mail
+                    <input class="input-cadastro" type="text" required placeholder="seuemail@email.com" id="emaildocadastro" ng-model="email" ng-required="true" name="email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
+                    <p ng-if="CadastroPessoa.email.$error.pattern" class="preencherCampos">Favor, preencher um e-mail válido</p>
+                    <p ng-if="CadastroPessoa.email.$error.required" class="preencherCampos">Favor, preencher o campo e-mail<p>
+                </label>
+                <label class="form-cadastro" for="telefone">Digite seu telefone
+                    <input class="input-cadastro" type="text" required placeholder="DD DDDDD-DDDD" id="telefone" ng-model="telefone" ng-required="true" name="telefone" ng-pattern="/^\d{2}\s\d{5}\s\d{4}$/">
+                    <p ng-if="CadastroPessoa.telefone.$error.pattern" class="preencherCampos">Favor, preencher um numero de telefone válido, formato(DD DDDDD-DDDD)</p>
+                    <p ng-if="CadastroPessoa.telefone.$error.required" class="preencherCampos">Favor, preencher o campo telefone<p>
+                </label>
+
+            </div>
+            <div class="endereço">
+
+                <h2 id="TituloEndereco">Endereço</h2>
+                <label class="form-endereço" for="cidade">
+                    Cidade
+                    <input class="input-endereço" id="cidade" type="text" required
+                           placeholder="Digite o nome da sua Cidade" ng-model="cidade" ng-required="true" name="cidade">
+                    <p ng-if="!CadastroPessoa.cidade.$valid" class="preencherCampos">Favor, preencher o campo cidade<p>
+                </label>
+
+                <label class="form-endereço" for="rua">
+                    Rua
+                    <input class="input-endereço" id="rua" type="text" required placeholder="Digite o nome da sua rua" ng-model="rua" ng-required="true" name="rua">
+                    <p ng-if="!CadastroPessoa.rua.$valid" class="preencherCampos">Favor, preencher o campo rua<p>
+                </label>
+
+                <label class="form-endereço" for="quadra">
+                    Quadra
+                    <input class="input-endereço" id="quadra" type="number" required placeholder="Digite a sua quadra" ng-model="quadra" ng-required="true" name="quadra" >
+                    <p ng-if="!CadastroPessoa.quadra.$valid" class="preencherCampos">Favor, preencher o campo quadra<p>
+                </label>
+
+                <label class="form-endereço" for="lote">
+                    Lote
+                    <input class="input-endereço" id="lote" type="number" required placeholder="Digite a seu Lote" ng-model="lote" ng-required="true" name="lote">
+                    <p ng-if="!CadastroPessoa.lote.$valid" class="preencherCampos">Favor, preencher o campo lote<p>
+                </label>
+
+            </div>
+        </form>
+
+
+        <div id="botoesDeSalvarECancelar">
+
+            <button id="botaoDeSalvarDaTelaDeCadastro" ng-click="adicionarPessoa(nome,cpf,email,telefone,cidade,rua,quadra,lote)" ng-disabled="!CadastroPessoa.$valid">Cadastrar</button>
+            <button id="botaoDeCancelarDaTelaDeCadastro" ng-click="irParaTabela()">Cancelar</button>
+
+        </div>
+
+    </div>
+</body>

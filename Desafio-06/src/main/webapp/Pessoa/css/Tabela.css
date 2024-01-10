@@ -1,0 +1,77 @@
+.botaodenovo{
+    font-family: "Helvetica, sans-serif";
+    width: 200px;
+    height: 30px;
+    background-color: #00afff;
+    border: solid 2px white;
+    border-radius: 5px;
+
+}
+
+#iniciar{
+    font-family: "Helvetica, sans-serif";
+    width: 200px;
+    height: 50px;
+    background-color: #00afff;
+    border: solid 2px white;
+    border-radius: 5px;
+    margin-left: 42.5% ;
+    margin-top: 2%;
+}
+
+#tituloIniciar {
+    text-align: center;
+    margin-top: 10%;
+    background-color: #00afff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.botaodenovo:hover{
+    scale: 105%;
+}
+
+#listaDePessoas{
+    background-color: #f6f6f6;
+
+}
+
+.colunadatabela{
+    text-align: center;
+    width: 200px;
+    border-right: solid 1px black;
+}
+
+.botaoExcluir{
+    font-family: "Helvetica, sans-serif";
+    width: 70px;
+    height: 30px;
+    background-color: #f60e4d;
+    border: solid 2px white;
+    border-radius: 5px;
+
+}
+
+.botaoExcluir:hover{
+    scale: 105%;
+}
+
+.botaoEditar{
+    font-family: "Helvetica, sans-serif";
+    width: 70px;
+    height: 30px;
+    background-color: #00afff;
+    border: solid 2px white;
+    border-radius: 5px;
+
+}
+
+.botaoEditar:hover{
+    scale: 105%;
+}
+

@@ -1,0 +1,32 @@
+
+<html lang="pt-br" ng-app="ListaDePessoas">
+<head>
+    <meta charset="UTF-8">
+    <title>view</title>
+    <link rel="stylesheet" href="../Pessoa/css/Tabela.css">
+    <link rel="stylesheet" href="../Pessoa/css/CadastroPessoa.css">
+    <link rel="stylesheet" href="../Pessoa/css/EdicaoPessoa.css">
+    <link rel="stylesheet" href="../Contato/css/CadastroContato.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="/config/app.js"></script>
+    <script src="/config/routeConfig.js"></script>
+    <script src="//code.angularjs.org/1.4.4/angular-route.js"></script>
+    <script src="../Pessoa/Js/PessoaCtrl.js"></script>
+    <script src="../Pessoa/Js/PerfilCtrl.js"></script>
+    <script src="../Pessoa/Js/CadastroCtrl.js"></script>
+    <script src="../Pessoa/Js/Services/pessoasAPI.js"></script>
+    <script src="../Classes/Contato.js"></script>
+    <script src="../Classes/Pessoa.js"></script>
+    <script src = "../Contato/Js/CadastroContatoCtrl.js"></script>
+    <script src = "../Contato/Js/EditarContatoCtrl.js"></script>
+    <script src = "../Contato/Js/Services/contatosAPI.js"></script>
+
+
+</head>
+<body ng-controller="PessoaCtrl" id="view">
+    <div ng-view >
+
+    </div>
+</body>
+</html>

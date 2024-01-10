@@ -1,0 +1,31 @@
+
+<body>
+<div id="cadastro">
+    <h2 id="TituloDaTelaDeCadastro">TELA DE CADASTRO DE CONTATO</h2>
+    <form name="CadastrarContato">
+        <div >
+            <label class="form-cadastro" for="nomeesobrenome">Nome e sobrenome
+                <input class="input-cadastro" id="nomeesobrenome" type="text" required
+                       placeholder="Digite seu nome e sobrenome" ng-model="nome" name="nome">
+            </label>
+            <p ng-if="!CadastrarContato.nome.$valid" class="preencherCampos">Favor, preencher o campo nome<p>
+            <label class="form-cadastro" for="emaildocadastro">Digite seu e-mail
+                <input class="input-cadastro" type="text" required placeholder="seuemail@email.com" id="emaildocadastro" ng-model="email" ng-required="true" name="email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/">
+                <p ng-if="CadastrarContato.email.$error.pattern" class="preencherCampos">Favor, preencher um e-mail válido</p>
+                <p ng-if="CadastrarContato.email.$error.required" class="preencherCampos">Favor, preencher o campo e-mail</p>
+            </label>
+            <label class="form-cadastro" for="telefone">Digite seu telefone
+                <input class="input-cadastro" type="text" required placeholder="DD DDDDD-DDDD" id="telefone" ng-model="telefone" name="telefone" ng-pattern="/^\d{2}\s\d{5}\s\d{4}$/"/>
+            </label>
+            <p ng-if="CadastrarContato.telefone.$error.pattern" class="preencherCampos">Favor, preencher um numero de telefone válido, formato(DD DDDDD-DDDD)</p>
+            <p ng-if="CadastrarContato.telefone.$error.required" class="preencherCampos">Favor, preencher o campo telefone<p>
+        </div>
+    </form>
+    <div id="botoesDeSalvarECancelar">
+        <button id="botaoDeSalvarContato" ng-click="adicionarContato(nome,email,telefone)" ng-disabled="CadastrarContato.$invalid">Salvar</button>
+        <button id="botaoDeCancelarContato" ng-click="voltarParaTelaDeEditarPessoa()">Voltar</button>
+    </div>
+</div>
+
+</body>
+</html>
